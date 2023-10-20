@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { RouterProvider } from 'react-router-dom';
+
+import { router } from './router/router';
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyles = createGlobalStyle`
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #F2F2F2;
+  
+  @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+  *{
+    font-family: 'Roboto', sans-serif;
+  }
+}
+`;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <RouterProvider router={router}/>
+    <GlobalStyles/></>
+          
+
   );
 }
 
