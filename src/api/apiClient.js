@@ -2,7 +2,7 @@ import axios from "axios";
 import { getTokenFromLocalStorage } from "../helpers/localstorageHelper";
 
 export const apiClient = axios.create({
-    baseURL: 'http://localhost:3001/api',
+    baseURL: 'https://testproject-nd88.onrender.com/api',
     headers:{
         Authorization:'Bearer ' +getTokenFromLocalStorage()  || '',
     },
